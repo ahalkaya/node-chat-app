@@ -7,6 +7,17 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/libs/easy-autocomplete.min.css">
+
+    <style>
+        div.easy-autocomplete {
+            width: 100%;
+        }
+        div.easy-autocomplete > input {
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body class="centered-form">
@@ -29,5 +40,10 @@
         </form>
     </div>
 </body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/libs/jquery-3.2.1.min.js"></script>
+<script src="/js/libs/jquery.easy-autocomplete.min.js"></script>
+<script src="/js/index.js"></script>
 
 </html>

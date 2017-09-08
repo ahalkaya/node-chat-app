@@ -33,6 +33,13 @@ class Users {
 
         return namesArr;
     }
+
+    getRoomList () {
+        let roomsArr = this.users.map((user) => user.room);
+        let rooms = roomsArr.filter((room, index, arr) => arr.indexOf(room) === index);
+
+        return rooms;
+    }
 }
 
 module.exports = {Users};

@@ -34,6 +34,7 @@ io.on('connection', (socket) => {
         users.addUser(socket.id, params.name, room);
 
         io.to(room).emit('updateUserList', users.getUserList(room));
+        io.emit('updateRoomList', users.getRoomList());
 
         // socket.leave('The office fans');
         //
@@ -72,7 +73,12 @@ io.on('connection', (socket) => {
         if (user) {
             io.to(user.room).emit('updateUserList', users.getUserList(user.room));
             io.to(user.room).emit('newMessage', generateMessage('Admin', `${user.name} has left.`));
+            io.emit('updateRoomList', users.getRoomList());
         }
+    });
+
+    socket.on('newUserConnected', () => {
+        socket.emit('updateRoomList', users.getRoomList());
     });
 });
 

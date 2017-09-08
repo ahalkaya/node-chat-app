@@ -95,4 +95,10 @@ describe('Users', () => {
         
         expect(userList).toEqual(['User 2']);
     });
+
+    it('should return unique rooms', () => {
+        let rooms = users.getRoomList();
+
+        expect(rooms).toEqual(['Node devs', 'JS devs']);
+    });
 });
