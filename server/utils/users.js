@@ -24,7 +24,7 @@ class Users {
     } 
 
     getUserByName (name) {
-        return this.users.filter((user) => user.name === name)[0];
+        return this.users.filter((user) => user.name.toLowerCase() === name.toLowerCase())[0];
     } 
 
     getUserList (room) {

@@ -70,10 +70,17 @@ describe('Users', () => {
         expect(user.name).toBe(username);
     });
 
+    it('should find user by name case insensitive', () => {
+        let username = 'uSeR 2';
+        let user = users.getUserByName(username);
+
+        expect(user.name.toLowerCase()).toBe(username.toLowerCase());
+    });
+
     it('should not find user by name', () => {
         let username = 'Someone';
         let user = users.getUserByName(username);
-        
+
         expect(user).toNotExist();
     });
 

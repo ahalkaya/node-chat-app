@@ -22,6 +22,10 @@ io.on('connection', (socket) => {
         if (!isRealString(params.name) || !isRealString(params.room)) {
             return callback('Name and room name are required.'); // to make sure below code not run
         }
+
+        if (users.getUserByName(params.name)) {
+            return callback('Username has already been taken');
+        }
         
         let room = params.room.toLowerCase();
 
