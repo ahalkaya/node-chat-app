@@ -50,16 +50,30 @@ describe('Users', () => {
         expect(users.users.length).toBe(3);
     });
 
-    it('should find user', () => {
+    it('should find user by id', () => {
         let userId = '2';
-        let user = users.getUser(userId);
+        let user = users.getUserById(userId);
         expect(user.id).toBe(userId);
     });
 
-    it('should not find user', () => {
+    it('should not find user by id', () => {
         let userId = '99';
-        let user = users.getUser(userId);
+        let user = users.getUserById(userId);
 
+        expect(user).toNotExist();
+    });
+
+    it('should find user by name', () => {
+        let username = 'User 2';
+        let user = users.getUserByName(username);
+
+        expect(user.name).toBe(username);
+    });
+
+    it('should not find user by name', () => {
+        let username = 'Someone';
+        let user = users.getUserByName(username);
+        
         expect(user).toNotExist();
     });
 
