@@ -13,14 +13,6 @@ function scrollToBottom () {
 
     if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHeight) {
         messages.scrollTop(scrollHeight);
-        let data = {
-            clientHeight,
-            scrollTop,
-            scrollHeight,
-            newMessageHeight,
-            lastMessageHeight
-        }
-        console.log(data);
     }
 }
 

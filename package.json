@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "expect": "^1.20.2",
+    "jshint": "^2.9.5",
     "mocha": "^3.5.0",
     "nodemon": "^1.11.0"
   }
